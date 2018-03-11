@@ -13,3 +13,8 @@
 - YAHOO_JAPAN_CLIENT_ID=
 - YAHOO_JAPAN_CLIENT_SECRET=
 - YAHOO_JAPAN_REDIRECT=
+
+## Document
+- Yahoo Japan Auth https://developer.yahoo.co.jp/yconnect/v2/
+- Yahoo Japan Userinfo https://developer.yahoo.co.jp/yconnect/v2/userinfo.html
+- Line https://developers.line.me/en/docs/line-login/web/integrate-line-login/
