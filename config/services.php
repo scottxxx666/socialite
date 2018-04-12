@@ -51,6 +51,11 @@ return [
         'client_id' => env('YAHOO_JAPAN_CLIENT_ID'),
         'client_secret' => env('YAHOO_JAPAN_CLIENT_SECRET'),
         'redirect' => env('YAHOO_JAPAN_REDIRECT'),
-    ]
+    ],
 
+    'naver' => [
+        'client_id' => env('NAVER_CLIENT_ID'),
+        'client_secret' => env('NAVER_CLIENT_SECRET'),
+        'redirect' => env('NAVER_REDIRECT'),
+    ],
 ];

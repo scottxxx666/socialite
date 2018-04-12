@@ -56,4 +56,25 @@ class LoginController extends Controller
         $datas = json_decode($response->getBody()->getContents());
         return view('login', ['datas' => $datas]);
     }
+
+    public function naver(Request $request)
+    {
+        $code = $request->input('code');
+        $client = new Client;
+        try {
+            $response = $client->request('POST', 'https://nid.naver.com/oauth2.0/token', [
+                'form_params' => [
+                    'code' => $code,
+                    'grant_type' => 'authorization_code',
+                    'redirect_uri' => config('services.naver.redirect'),
+                    'client_id' => config('services.naver.client_id'),
+                    'client_secret' => config('services.naver.client_secret'),
+                ]
+            ]);
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+        $datas = json_decode($response->getBody()->getContents());
+        return view('login', ['datas' => $datas]);
+    }
 }

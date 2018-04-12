@@ -14,6 +14,11 @@
             <button>Yahoo Japan Login</button>
         </a>
     </div>
+    <div>
+        <a href="https://nid.naver.com/oauth2.0/authorize?client_id={{ config('services.naver.client_id') }}&redirect_uri={{ config('services.naver.redirect') }}&response_type=code">
+            <button>Naver Login</button>
+        </a>
+    </div>
     @if ($datas)
         <div>
             Result:
