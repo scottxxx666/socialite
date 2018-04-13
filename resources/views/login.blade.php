@@ -19,6 +19,11 @@
             <button>Naver Login</button>
         </a>
     </div>
+    <div>
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id={{ config('services.kakao.client_id') }}&redirect_uri={{ config('services.kakao.redirect') }}&response_type=code">
+            <button>Kakao Login</button>
+        </a>
+    </div>
     @if ($datas)
         <div>
             Result:

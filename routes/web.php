@@ -19,3 +19,4 @@ Route::get('login', 'LoginController@index');
 Route::get('line', 'LoginController@line');
 Route::get('yahoo-japan', 'LoginController@yahooJapan');
 Route::get('naver', 'LoginController@naver');
+Route::get('kakao', 'LoginController@kakao');

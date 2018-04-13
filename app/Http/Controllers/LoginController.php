@@ -77,4 +77,24 @@ class LoginController extends Controller
         $datas = json_decode($response->getBody()->getContents());
         return view('login', ['datas' => $datas]);
     }
+
+    public function kakao(Request $request)
+    {
+        $code = $request->input('code');
+        $client = new Client;
+        try {
+            $response = $client->request('POST', 'https://kauth.kakao.com/oauth/token', [
+                'form_params' => [
+                    'code' => $code,
+                    'grant_type' => 'authorization_code',
+                    'redirect_uri' => config('services.kakao.redirect'),
+                    'client_id' => config('services.kakao.client_id'),
+                ]
+            ]);
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+        $datas = json_decode($response->getBody()->getContents());
+        return view('login', ['datas' => $datas]);
+    }
 }
