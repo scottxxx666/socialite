@@ -97,4 +97,11 @@ class LoginController extends Controller
         $datas = json_decode($response->getBody()->getContents());
         return view('login', ['datas' => $datas]);
     }
+
+    public function kakaoSocialite()
+    {
+        return Socialite::with('kakao')->redirect();
+        dd(Socialite::with('kakao')->user());
+    }
+
 }
